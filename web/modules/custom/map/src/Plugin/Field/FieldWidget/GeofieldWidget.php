@@ -11,7 +11,7 @@ use Drupal\geofield\Plugin\Field\FieldWidget\GeofieldBaseWidget;
  *
  * @FieldWidget(
  *   id = "farm_map_geofield",
- *   label = @Translation("nfa Map"),
+ *   label = @Translation("NFA Map"),
  *   field_types = {
  *     "geofield"
  *   }

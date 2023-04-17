@@ -13,7 +13,7 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  *
  * @FieldFormatter(
  *   id = "farm_map_geofield",
- *   label = @Translation("nfa Map"),
+ *   label = @Translation("NFA Map"),
  *   field_types = {
  *     "geofield"
  *   }
