@@ -108,19 +108,33 @@ class NfafmisSettingsForm extends ConfigFormBase {
     $form['item-charges']['manual-action'] = [
       '#type' => 'fieldset',
     ];
-    $form['item-charges']['manual-action']['last_year'] = [
-      '#type' => 'submit',
-      '#button_type' => 'primary',
-      '#for_year' => $this->last_year,
-      '#submit' => [[$this, 'calculateAnnualChargesBatch']],
-      '#value' => $this->t("Calculate annual charges for $this->last_year"),
+
+    $options = array_combine(range(date('Y'), 2004), range(date('Y'), 2004));
+    $form['item-charges']['manual-action']['year'] = [
+      '#type' => 'select',
+      '#title' => $this->t('Select year'),
+      '#options' => $options,
     ];
-    $form['item-charges']['manual-action']['current_year'] = [
+    $form['item-charges']['manual-action']['farmer']= [
+      '#type' => 'entity_autocomplete',
+      '#title' => $this->t('Farmer'),
+      '#target_type' => 'node',
+      '#selection_settings' => [
+        'target_bundles' => ['farmer_details'],
+      ],
+    ];
+    $form['item-charges']['manual-action']['recalculate'] = [
+      '#type' => 'checkbox',
+      '#title' => $this->t('Recalculate and replace existing charges.'),
+      '#description' => $this->t('If checked, existing charges will be deleted and replaced with recalculated values.'),
+      '#return_value' => TRUE,
+      '#default_value' => FALSE,
+    ];
+    $form['item-charges']['manual-action']['submit'] = [
       '#type' => 'submit',
       '#button_type' => 'primary',
-      '#for_year' => $this->current_year,
       '#submit' => [[$this, 'calculateAnnualChargesBatch']],
-      '#value' => $this->t("Calculate annual charges for $this->current_year"),
+      '#value' => $this->t('Calculate annual charges'),
     ];
     return parent::buildForm($form, $form_state);
   }
