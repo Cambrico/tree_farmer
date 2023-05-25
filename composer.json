@@ -60,6 +60,7 @@
     "drupal/diff": "^1",
     "drupal/entity_reference_revisions": "^1",
     "drupal/entity_reference_views_select": "^1",
+    "drupal/environment_indicator": "^4",
     "drupal/field_group": "^3",
     "drupal/flag": "^4",
     "drupal/geocoder": "^3",

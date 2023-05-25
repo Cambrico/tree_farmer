@@ -9,3 +9,7 @@ services:
     class: Drupal\nfafmis\Routing\RouteSubscriber
     tags:
       - { name: event_subscriber }
+  nfafmis_service.ftont_event_subscriber:
+    class: Drupal\nfafmis\EventSubscriber\FrontEventSubscriber
+    tags:
+      - { name: event_subscriber }
