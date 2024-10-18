@@ -4596,6 +4596,7 @@ display:
     display_plugin: data_export
     position: 15
     display_options:
+      enabled: true
       filters:
         status:
           id: status
@@ -4656,7 +4657,7 @@ display:
           id: management_unit_target_id
           table: taxonomy_term__management_unit
           field: management_unit_target_id
-          relationship: management_unit
+          relationship: field_central_forest_reserve
           group_type: group
           admin_label: ''
           plugin_id: taxonomy_index_tid
